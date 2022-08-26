@@ -1,25 +1,25 @@
 <script>
-  import { username, user } from './user';
+  import { username, user } from "./user";
 
   function signout() {
     user.leave();
-    username.set('');
+    username.set("");
   }
 </script>
 
 <header>
-<h1>🌙</h1>
+  <h1>🌙</h1>
   {#if $username}
     <div class="user-bio">
-      
       <span>Hello <strong>{$username}</strong></span>
-      <img src={`https://avatars.dicebear.com/api/initials/${$username}.svg`} alt="avatar" /> 
+      <img
+        src={`https://avatars.dicebear.com/api/initials/${$username}.svg`}
+        alt="avatar"
+      />
     </div>
 
     <button class="signout-button" on:click={signout}>Sign Out</button>
-
-    {:else}
-
-      <h3>TAKSHAK CHAT-DAPP</h3>
+  {:else}
+    <h3 class="namer">TAKSHAK CHAT-DAPP</h3>
   {/if}
 </header>
